@@ -88,3 +88,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+fonts:
+  - family: HarmonyOS_Sans_SC
+    fonts:
+      - asset: fonts/HaromnyOS_Sans_SC_Medium.ttf
+        weight: 400
+      - asset: fonts/HaromnyOS_Sans_SC_Bold.ttf
+        weight: 800
+
