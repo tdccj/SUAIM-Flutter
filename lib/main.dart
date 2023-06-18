@@ -4,11 +4,13 @@ void main() {
   runApp(MaterialApp(
       home: Scaffold(
     appBar: AppBar(
-      title: const Text("hi",
-          style: TextStyle(color: Color.fromARGB(255, 24, 121, 201))), // 设置标题颜色
+      title: const Text("溯物-SUAIM",
+          style: TextStyle(
+              color: Color.fromARGB(255, 24, 121, 201),
+              fontWeight: FontWeight.w300)), // 设置标题颜色
       // centerTitle: true, // 设置标题居中
       backgroundColor: Colors.white, // 设置appbar背景
-      elevation: 5, // 阴影
+      elevation: 2, // 阴影
     ),
     body: const MyApp(),
   )));
