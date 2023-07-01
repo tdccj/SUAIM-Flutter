@@ -10,11 +10,25 @@ void main() {
         // 构建主界面
         body: const MyApp(), // 设置主界面内容为MyApp组件
         drawer: const Drawer(
-            child: Scaffold(
-          body: Center(
-            child: Text('1'),
+          child: Scaffold(
+            body: Column(
+              children: [
+                Flexible(
+                  flex: 1,
+                  child: Center(
+                    child: Text(
+                      '目录',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 22, 130, 218),
+                          fontSize: 30,
+                          fontFamily: 'LingDongQiCheChunTang'),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
-        )),
+        ),
         appBar: AppBar(
           title: const Text('溯物-SUAIM'),
           titleTextStyle: const TextStyle(
@@ -39,7 +53,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // 构建MyApp组件
     return Container(
-      width: 60,
+      // width: 60,
       color: const Color.fromARGB(255, 255, 255, 255),
       // child: Column(
       //   children: <Widget>[

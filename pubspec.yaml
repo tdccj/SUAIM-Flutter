@@ -86,14 +86,21 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
-  # For details regarding fonts from package dependencies,
+  # For details regarding fonts from package dependenciSes,
   # see https://flutter.dev/custom-fonts/#from-packages
 
-fonts:
-  - family: HarmonyOS_Sans_SC
-    fonts:
-      - asset: fonts/HaromnyOS_Sans_SC_Medium.ttf
-        weight: 400
-      - asset: fonts/HaromnyOS_Sans_SC_Bold.ttf
-        weight: 800
+  fonts:
+    - family: HarmonyOS_Sans_SC
+      fonts:
+        - asset: fonts/HarmonyOS_Sans_SC_Medium.ttf
+          weight: 400
+        - asset: fonts/HarmonyOS_Sans_SC_Bold.ttf
+          weight: 800
+    - family: DeYiHei
+      fonts:
+        - asset: fonts/SmileySans-Oblique-2.ttf
+    - family: LingDongQiCheChunTang
+      fonts:
+        - asset: fonts/LingDongQiCheChunTang-2.ttf
+
 
