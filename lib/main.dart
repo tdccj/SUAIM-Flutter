@@ -30,13 +30,28 @@ void main() {
           ),
         ),
         appBar: AppBar(
-          title: const Text('溯物-SUAIM'),
-          titleTextStyle: const TextStyle(
-            color: Color.fromARGB(255, 22, 130, 218),
-            fontSize: 20,
-          ),
           backgroundColor: Colors.white,
           foregroundColor: const Color.fromARGB(255, 22, 130, 218),
+          title: const Row(
+            children: [
+              Text(
+                '溯物',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 22, 130, 218),
+                  fontSize: 30,
+                  fontFamily: 'KeShiLuYanTi',
+                ),
+              ),
+              Text(
+                '-SUAIM',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 22, 130, 218),
+                    fontSize: 23,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'KeShiLuYanTi'),
+              )
+            ],
+          ),
         ),
       ),
     ),

@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  bitsdojo_window: ^0.1.5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -96,11 +97,15 @@ flutter:
           weight: 400
         - asset: fonts/HarmonyOS_Sans_SC_Bold.ttf
           weight: 800
+        - asset: fonts\HarmonyOS_Sans_SC_Light.ttf
+          weight: 200
     - family: DeYiHei
       fonts:
         - asset: fonts/SmileySans-Oblique-2.ttf
     - family: LingDongQiCheChunTang
       fonts:
         - asset: fonts/LingDongQiCheChunTang-2.ttf
-
+    - family: KeShiLuYanTi
+      fonts:
+        - asset: fonts\KeShiLuYanTi.ttf
 
