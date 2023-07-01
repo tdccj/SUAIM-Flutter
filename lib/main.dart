@@ -32,8 +32,19 @@ void main() {
           ),
         ),
         appBar: AppBar(
+          // 改变颜色
           backgroundColor: Colors.white,
           foregroundColor: const Color.fromARGB(255, 22, 130, 218),
+          // 在整个appbar上添加拖动控件
+          flexibleSpace: SizedBox(
+            height: kToolbarHeight, // 设置flexibleSpace的高度为AppBar的高度
+            child: WindowTitleBarBox(
+              child: MoveWindow(
+                child: Container(color: Colors.white),
+              ),
+            ),
+          ),
+          // 在appbar上添加标题
           title: const Row(
             children: [
               Text(
@@ -54,6 +65,51 @@ void main() {
               )
             ],
           ),
+          // 在appbar上添加按钮
+          actions: [
+            Row(
+              children: [
+                // 添加窗口控制按钮：最小化、最大化、关闭
+                MinimizeWindowButton(
+                  colors: WindowButtonColors(
+                    normal: Colors.white,
+                    iconNormal: const Color.fromARGB(255, 22, 130, 218),
+                    mouseDown: const Color.fromARGB(255, 19, 81, 132),
+                    mouseOver: const Color.fromARGB(255, 107, 186, 249),
+                    iconMouseDown: Colors.white54,
+                    iconMouseOver: Colors.white,
+                  ),
+                  animate: true,
+                ),
+                MaximizeWindowButton(
+                  colors: WindowButtonColors(
+                    normal: Colors.white,
+                    iconNormal: const Color.fromARGB(255, 22, 130, 218),
+                    mouseDown: const Color.fromARGB(255, 19, 81, 132),
+                    mouseOver: const Color.fromARGB(255, 107, 186, 249),
+                    iconMouseDown: Colors.white54,
+                    iconMouseOver: Colors.white,
+                  ),
+                  animate: true,
+                ),
+                CloseWindowButton(
+                  colors: WindowButtonColors(
+                    normal: Colors.white,
+                    iconNormal: const Color.fromARGB(255, 22, 130, 218),
+                    mouseDown: const Color.fromARGB(255, 19, 81, 132),
+                    mouseOver: const Color.fromARGB(255, 107, 186, 249),
+                    iconMouseDown: Colors.white54,
+                    iconMouseOver: Colors.white,
+                  ),
+                  animate: true,
+                ),
+                // 右侧留白
+                const SizedBox(
+                  width: 10,
+                )
+              ],
+            )
+          ],
         ),
       ),
     ),
