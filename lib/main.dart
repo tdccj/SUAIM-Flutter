@@ -134,14 +134,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 构建MyApp组件
-    return Container(
-      // width: 60,
-      color: const Color.fromARGB(255, 255, 255, 255),
-      // child: Column(
-      //   children: <Widget>[
-      //     TextButton(onPressed: _onButtonpressed, child: const Text('Button'))
-      //   ],
-      // ),
+    return WindowBorder(
+      color: Colors.blue,
+      child: Container(
+        // width: 60,
+        color: const Color.fromARGB(255, 255, 255, 255),
+        // child: Column(
+        //   children: <Widget>[
+        //     TextButton(onPressed: _onButtonpressed, child: const Text('Button'))
+        //   ],
+        // ),
+      ),
     );
   }
 }
