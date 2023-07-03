@@ -10,7 +10,7 @@ void main() {
 
       theme: ThemeData(
           fontFamily: 'HarmonyOS_Sans_SC'), // 设置全局主题样式，字体为‘HarmonyOS_Sans_SC’
-      home: const Home(),
+      home: const Home(), // 引入程序
     ),
   );
 
