@@ -35,6 +35,8 @@ void main() {
           // 改变颜色
           backgroundColor: Colors.white,
           foregroundColor: const Color.fromARGB(255, 22, 130, 218),
+          //设置阴影
+          elevation: 2,
           // 在整个appbar上添加拖动控件
           flexibleSpace: SizedBox(
             height: kToolbarHeight, // 设置flexibleSpace的高度为AppBar的高度
@@ -103,7 +105,7 @@ void main() {
                   ),
                   animate: true,
                 ),
-                // 右侧留白
+                // 右侧留空
                 const SizedBox(
                   width: 10,
                 )
@@ -134,17 +136,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 构建MyApp组件
-    return WindowBorder(
-      color: Colors.blue,
-      child: Container(
-        // width: 60,
-        color: const Color.fromARGB(255, 255, 255, 255),
-        // child: Column(
-        //   children: <Widget>[
-        //     TextButton(onPressed: _onButtonpressed, child: const Text('Button'))
-        //   ],
-        // ),
-      ),
-    );
+    return Container(
+        color: const Color.fromARGB(255, 255, 255, 255), child: Column());
   }
 }
