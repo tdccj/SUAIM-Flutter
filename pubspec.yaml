@@ -109,3 +109,5 @@ flutter:
       fonts:
         - asset: fonts\KeShiLuYanTi.ttf
 
+  assets:
+    - assets/halo.png

@@ -117,7 +117,7 @@ void main() {
     ),
   );
 
-  // bitsdojo_window显示窗口
+  // bitsdojo_window显示窗口，并设定窗口最小值
   doWhenWindowReady(
     () {
       const initialSize = Size(400, 600);
@@ -137,6 +137,38 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // 构建MyApp组件
     return Container(
-        color: const Color.fromARGB(255, 255, 255, 255), child: Column());
+      color: const Color.fromARGB(255, 255, 255, 255),
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 30,
+          ),
+          Flexible(
+            flex: 4,
+            child: Row(
+              children: [
+                const SizedBox(
+                  width: 30,
+                ),
+                Flexible(
+                  child: Center(
+                    child: Image.asset('assets/halo.png'),
+                  ),
+                ),
+                const SizedBox(
+                  width: 30,
+                ),
+              ],
+            ),
+          ),
+          const Spacer(
+            flex: 1,
+          ),
+          const SizedBox(
+            height: 150,
+          )
+        ],
+      ),
+    );
   }
 }
