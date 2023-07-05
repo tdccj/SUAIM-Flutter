@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/animation.dart';
+import 'haloAni.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key}); // 定义构造方法
@@ -10,36 +10,37 @@ class MainPage extends StatelessWidget {
     return Container(
       // 创建主页面
       color: const Color.fromARGB(255, 255, 255, 255),
-      child: Column(
+      child: const Column(
         // 第一层结构为cloumn，分割显示和按钮
         children: [
-          const SizedBox(
+          SizedBox(
             height: 30,
           ),
           Flexible(
             flex: 4,
             child: Row(
-              // 显示数据
+              // 显示区
               children: [
-                const SizedBox(
+                SizedBox(
                   width: 30,
                 ),
                 Flexible(
+                  // 显示总量数据
                   child: Center(
-                    child: Image.asset('assets/halo.png'),
+                    child: HaloAni(), // 引入光环素材
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 30,
                 ),
               ],
             ),
           ),
-          const Spacer(
+          Spacer(
             // 分割两大模块
             flex: 1,
           ),
-          const SizedBox(
+          SizedBox(
             // 功能按钮区
             height: 150,
           )

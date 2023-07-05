@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'mainPage.dart';
+import 'main_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
