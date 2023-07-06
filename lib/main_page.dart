@@ -17,7 +17,7 @@ class MainPage extends StatelessWidget {
             height: 30,
           ),
           Flexible(
-            flex: 4,
+            flex: 5,
             child: Row(
               // 显示区
               children: [
@@ -27,7 +27,7 @@ class MainPage extends StatelessWidget {
                 Flexible(
                   // 显示总量数据
                   child: Center(
-                    child: HaloAni(), // 引入光环素材
+                    child: HaloAni(), // 引入光环动画
                   ),
                 ),
                 SizedBox(
@@ -40,10 +40,38 @@ class MainPage extends StatelessWidget {
             // 分割两大模块
             flex: 1,
           ),
-          SizedBox(
+          Flexible(
             // 功能按钮区
-            height: 150,
-          )
+            flex: 2,
+            child: Row(
+              children: [
+                Spacer(
+                  flex: 1,
+                ),
+                Flexible(
+                  child: Center(
+                    child: Text('data'),
+                  ),
+                ),
+                Flexible(
+                  child: Center(
+                    child: Text('data'),
+                  ),
+                ),
+                Flexible(
+                  child: Center(
+                    child: Text('data'),
+                  ),
+                ),
+                Spacer(
+                  flex: 1,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 60,
+          ),
         ],
       ),
     );
