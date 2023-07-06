@@ -13,8 +13,8 @@ class MainPage extends StatelessWidget {
       child: const Column(
         // 第一层结构为cloumn，分割显示和按钮
         children: [
-          SizedBox(
-            height: 30,
+          Spacer(
+            flex: 1,
           ),
           Flexible(
             flex: 5,
@@ -26,8 +26,12 @@ class MainPage extends StatelessWidget {
                 ),
                 Flexible(
                   // 显示总量数据
-                  child: Center(
-                    child: HaloAni(), // 引入光环动画
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: <Widget>[
+                      HaloAni(), // 引入光环动画
+                      Text('data')
+                    ],
                   ),
                 ),
                 SizedBox(
@@ -69,8 +73,8 @@ class MainPage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 60,
+          Spacer(
+            flex: 1,
           ),
         ],
       ),

@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.white,
         foregroundColor: const Color.fromARGB(255, 22, 130, 218),
         //设置阴影
-        elevation: 2,
+        elevation: 1,
         // 在整个appbar上添加拖动控件
         flexibleSpace: SizedBox(
           height: kToolbarHeight, // 设置flexibleSpace的高度为AppBar的高度
