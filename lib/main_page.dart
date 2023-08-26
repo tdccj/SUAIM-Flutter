@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:suaim/addItem.dart';
 import 'haloAni.dart';
 
 class MainPage extends StatelessWidget {
@@ -56,8 +58,11 @@ class MainPage extends StatelessWidget {
                   child: Center(
                     child: TextButton(
                       onPressed: () {
-                        Navigator.of(context)
-                            .pushNamed('roter/additem'); // 导航到添加页面
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) =>
+                                    const AddItem())); // 导航到添加页面
                       },
                       child: const Text('data'),
                     ),
