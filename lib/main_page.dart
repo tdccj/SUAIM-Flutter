@@ -10,13 +10,13 @@ class MainPage extends StatelessWidget {
     return Container(
       // 创建主页面
       color: const Color.fromARGB(255, 255, 255, 255),
-      child: const Column(
+      child: Column(
         // 第一层结构为cloumn，分割显示和按钮
         children: [
-          Spacer(
+          const Spacer(
             flex: 1,
           ),
-          Flexible(
+          const Flexible(
             flex: 5,
             child: Row(
               // 显示区
@@ -40,7 +40,7 @@ class MainPage extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(
+          const Spacer(
             // 分割两大模块
             flex: 1,
           ),
@@ -49,31 +49,37 @@ class MainPage extends StatelessWidget {
             flex: 2,
             child: Row(
               children: [
-                Spacer(
+                const Spacer(
                   flex: 1,
                 ),
                 Flexible(
                   child: Center(
-                    child: Text('data'),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('roter/additem'); // 导航到添加页面
+                      },
+                      child: const Text('data'),
+                    ),
                   ),
                 ),
-                Flexible(
+                const Flexible(
                   child: Center(
                     child: Text('data'),
                   ),
                 ),
-                Flexible(
+                const Flexible(
                   child: Center(
                     child: Text('data'),
                   ),
                 ),
-                Spacer(
+                const Spacer(
                   flex: 1,
                 ),
               ],
             ),
           ),
-          Spacer(
+          const Spacer(
             flex: 1,
           ),
         ],
