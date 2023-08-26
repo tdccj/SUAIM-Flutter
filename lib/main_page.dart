@@ -55,6 +55,7 @@ class MainPage extends StatelessWidget {
                   flex: 1,
                 ),
                 Flexible(
+                  // 添加物品界面
                   child: Center(
                     child: TextButton(
                       onPressed: () {
@@ -64,7 +65,13 @@ class MainPage extends StatelessWidget {
                                 builder: (context) =>
                                     const AddItem())); // 导航到添加页面
                       },
-                      child: const Text('data'),
+                      child: const Text(
+                        '添加',
+                        style: TextStyle(
+                            fontSize: 40,
+                            fontFamily: 'KeShiLuYanTi',
+                            color: Color.fromARGB(255, 22, 130, 218)),
+                      ),
                     ),
                   ),
                 ),
