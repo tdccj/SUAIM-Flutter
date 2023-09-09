@@ -26,21 +26,13 @@ class AddItem extends StatelessWidget {
         title: const Row(
           children: [
             Text(
-              '溯物',
+              '添加',
               style: TextStyle(
                 color: Color.fromARGB(255, 22, 130, 218),
                 fontSize: 30,
                 fontFamily: 'KeShiLuYanTi',
               ),
             ),
-            Text(
-              '-SUAIM',
-              style: TextStyle(
-                  color: Color.fromARGB(255, 22, 130, 218),
-                  fontSize: 23,
-                  fontWeight: FontWeight.w300,
-                  fontFamily: 'KeShiLuYanTi'),
-            )
           ],
         ),
         // 在appbar上添加按钮

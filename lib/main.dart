@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'package:suaim/main_page.dart';
 import 'home.dart';
 import 'addItem.dart';
+import 'dart:io';
 
 void main() {
   runApp(
@@ -21,12 +21,15 @@ void main() {
     ),
   );
 
-  // bitsdojo_window显示窗口，并设定窗口最小值
-  doWhenWindowReady(
-    () {
-      const initialSize = Size(400, 600);
-      appWindow.minSize = initialSize;
-      appWindow.show();
-    },
-  );
+  if (Platform.isWindows) {
+    // 只在windows下启用
+    // bitsdojo_window显示窗口，并设定窗口最小值
+    doWhenWindowReady(
+      () {
+        const initialSize = Size(400, 600);
+        appWindow.minSize = initialSize;
+        appWindow.show();
+      },
+    );
+  }
 }
