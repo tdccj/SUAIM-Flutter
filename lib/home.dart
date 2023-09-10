@@ -15,6 +15,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     if (Platform.isWindows) {
+      print('12');
+
       return Scaffold(
         // 构建主界面
         body: const MainPage(), // 设置主界面内容为MyApp组件
@@ -122,6 +124,7 @@ class _HomeState extends State<Home> {
         ),
       );
     } else {
+      print('1');
       return Scaffold(
           // 构建主界面
           body: const MainPage(), // 设置主界面内容为MyApp组件

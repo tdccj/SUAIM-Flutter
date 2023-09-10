@@ -35,6 +35,17 @@ Small-Scale Universal Asset/Inventory Management 泛用小型资产/库存管理
 - 逻辑开发
 - 调用开源ocr和识别码生成库
 
+## 框架
+- 数据库后端
+   - 客户端后端
+   - 服务器后端（可选）
+      - python
+- 前端
+   - windows客户端
+      - python+flutter
+   - 安卓客户端
+      - flutter
+
 ## 注意事项
 > Database、table名字务必用英文，否则可能会出现问题<br>
 > 数据库最好放在程序目录下（源目录）<br>
