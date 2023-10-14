@@ -68,6 +68,27 @@ class MainPage extends StatelessWidget {
                       child: const Text(
                         '添加',
                         style: TextStyle(
+                          fontSize: 40,
+                          fontFamily: 'KeShiLuYanTi',
+                          color: Color.fromARGB(255, 22, 130, 218),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  child: Center(
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) =>
+                                    const AddItem())); // 导航到添加页面
+                      },
+                      child: const Text(
+                        '打印',
+                        style: TextStyle(
                             fontSize: 40,
                             fontFamily: 'KeShiLuYanTi',
                             color: Color.fromARGB(255, 22, 130, 218)),
@@ -75,14 +96,24 @@ class MainPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Flexible(
+                Flexible(
                   child: Center(
-                    child: Text('data'),
-                  ),
-                ),
-                const Flexible(
-                  child: Center(
-                    child: Text('data'),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) =>
+                                    const AddItem())); // 导航到添加页面
+                      },
+                      child: const Text(
+                        '管理',
+                        style: TextStyle(
+                            fontSize: 40,
+                            fontFamily: 'KeShiLuYanTi',
+                            color: Color.fromARGB(255, 22, 130, 218)),
+                      ),
+                    ),
                   ),
                 ),
                 const Spacer(
