@@ -46,22 +46,23 @@ class _additempageState extends State<additempage> {
       child: Center(
         child: Row(
           children: [
+            Spacer(flex: 1),
             Flexible(
+              flex: 10,
               child: Column(children: [
                 const Spacer(
                   flex: 1,
                 ),
                 Flexible(
-                  flex: 5,
+                  flex: 19,
                   child: ListView(
                     children: _viewlist(),
                   ),
                 )
               ]),
             ),
-            Container(
-                child: Flexible(
-                    child: Center(
+            Flexible(
+              flex: 5,
               child: TextButton(
                 child: const Text('载入'),
                 onPressed: () {
@@ -70,7 +71,7 @@ class _additempageState extends State<additempage> {
                   });
                 },
               ),
-            )))
+            )
           ],
         ),
       ),
