@@ -67,7 +67,7 @@ class MainPage extends StatelessWidget {
                                 builder: (context) =>
                                     const AddItem())); // 导航到添加页面
                       },
-                      child: Text(
+                      child: const Text(
                         '添加',
                         style: TextStyle(
                           fontSize: 40,
@@ -88,7 +88,7 @@ class MainPage extends StatelessWidget {
                                 builder: (context) =>
                                     const AddItem())); // 导航到添加页面
                       },
-                      child: Text(
+                      child: const Text(
                         '打印',
                         style: TextStyle(
                             fontSize: 40,
@@ -108,7 +108,7 @@ class MainPage extends StatelessWidget {
                                 builder: (context) =>
                                     const AddItem())); // 导航到添加页面
                       },
-                      child: Text(
+                      child: const Text(
                         '管理',
                         style: TextStyle(
                             fontSize: 40,

@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
       return Scaffold(
         // 构建主界面
         body: const MainPage(), // 设置主界面内容为MyApp组件
-        drawer: Drawer(
+        drawer: const Drawer(
           child: Scaffold(
             body: Column(
               children: [
@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           // 在appbar上添加标题
-          title: Row(
+          title: const Row(
             children: [
               Text(
                 '溯物',
@@ -129,7 +129,7 @@ class _HomeState extends State<Home> {
       return Scaffold(
           // 构建主界面
           body: const MainPage(), // 设置主界面内容为MyApp组件
-          drawer: Drawer(
+          drawer: const Drawer(
             child: Scaffold(
               body: Column(
                 children: [
@@ -165,7 +165,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               // 在appbar上添加标题
-              title: Row(
+              title: const Row(
                 children: [
                   Text(
                     '溯物',

@@ -30,7 +30,7 @@ class AddItem extends StatelessWidget {
             ),
           ),
           // 在appbar上添加标题
-          title: Row(
+          title: const Row(
             children: [
               Text(
                 '添加',
