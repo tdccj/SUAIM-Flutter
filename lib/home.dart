@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'main_page.dart';
+import 'common/global.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -20,7 +21,7 @@ class _HomeState extends State<Home> {
       return Scaffold(
         // 构建主界面
         body: const MainPage(), // 设置主界面内容为MyApp组件
-        drawer: const Drawer(
+        drawer: Drawer(
           child: Scaffold(
             body: Column(
               children: [
@@ -30,7 +31,7 @@ class _HomeState extends State<Home> {
                     child: Text(
                       '目录',
                       style: TextStyle(
-                          color: Color.fromARGB(255, 22, 130, 218),
+                          color: defaultColor,
                           fontSize: 30,
                           fontFamily: 'LingDongQiCheChunTang'),
                     ),
@@ -43,7 +44,7 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
           // 改变颜色
           backgroundColor: Colors.white,
-          foregroundColor: const Color.fromARGB(255, 22, 130, 218),
+          foregroundColor: defaultColor,
           //设置阴影
           elevation: 1,
           // 在整个appbar上添加拖动控件
@@ -56,12 +57,12 @@ class _HomeState extends State<Home> {
             ),
           ),
           // 在appbar上添加标题
-          title: const Row(
+          title: Row(
             children: [
               Text(
                 '溯物',
                 style: TextStyle(
-                  color: Color.fromARGB(255, 22, 130, 218),
+                  color: defaultColor,
                   fontSize: 30,
                   fontFamily: 'KeShiLuYanTi',
                 ),
@@ -69,7 +70,7 @@ class _HomeState extends State<Home> {
               Text(
                 '-SUAIM',
                 style: TextStyle(
-                    color: Color.fromARGB(255, 22, 130, 218),
+                    color: defaultColor,
                     fontSize: 23,
                     fontWeight: FontWeight.w300,
                     fontFamily: 'KeShiLuYanTi'),
@@ -84,7 +85,7 @@ class _HomeState extends State<Home> {
                 MinimizeWindowButton(
                   colors: WindowButtonColors(
                     normal: Colors.white,
-                    iconNormal: const Color.fromARGB(255, 22, 130, 218),
+                    iconNormal: defaultColor,
                     mouseDown: const Color.fromARGB(255, 19, 81, 132),
                     mouseOver: const Color.fromARGB(255, 107, 186, 249),
                     iconMouseDown: Colors.white54,
@@ -95,7 +96,7 @@ class _HomeState extends State<Home> {
                 MaximizeWindowButton(
                   colors: WindowButtonColors(
                     normal: Colors.white,
-                    iconNormal: const Color.fromARGB(255, 22, 130, 218),
+                    iconNormal: defaultColor,
                     mouseDown: const Color.fromARGB(255, 19, 81, 132),
                     mouseOver: const Color.fromARGB(255, 107, 186, 249),
                     iconMouseDown: Colors.white54,
@@ -106,7 +107,7 @@ class _HomeState extends State<Home> {
                 CloseWindowButton(
                   colors: WindowButtonColors(
                     normal: Colors.white,
-                    iconNormal: const Color.fromARGB(255, 22, 130, 218),
+                    iconNormal: defaultColor,
                     mouseDown: const Color.fromARGB(255, 19, 81, 132),
                     mouseOver: const Color.fromARGB(255, 107, 186, 249),
                     iconMouseDown: Colors.white54,
@@ -128,7 +129,7 @@ class _HomeState extends State<Home> {
       return Scaffold(
           // 构建主界面
           body: const MainPage(), // 设置主界面内容为MyApp组件
-          drawer: const Drawer(
+          drawer: Drawer(
             child: Scaffold(
               body: Column(
                 children: [
@@ -138,7 +139,7 @@ class _HomeState extends State<Home> {
                       child: Text(
                         '目录',
                         style: TextStyle(
-                            color: Color.fromARGB(255, 22, 130, 218),
+                            color: defaultColor,
                             fontSize: 30,
                             fontFamily: 'LingDongQiCheChunTang'),
                       ),
@@ -151,7 +152,7 @@ class _HomeState extends State<Home> {
           appBar: AppBar(
               // 改变颜色
               backgroundColor: Colors.white,
-              foregroundColor: const Color.fromARGB(255, 22, 130, 218),
+              foregroundColor: defaultColor,
               //设置阴影
               elevation: 1,
               // 在整个appbar上添加拖动控件
@@ -164,12 +165,12 @@ class _HomeState extends State<Home> {
                 ),
               ),
               // 在appbar上添加标题
-              title: const Row(
+              title: Row(
                 children: [
                   Text(
                     '溯物',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 22, 130, 218),
+                      color: defaultColor,
                       fontSize: 30,
                       fontFamily: 'KeShiLuYanTi',
                     ),
@@ -177,7 +178,7 @@ class _HomeState extends State<Home> {
                   Text(
                     '-SUAIM',
                     style: TextStyle(
-                        color: Color.fromARGB(255, 22, 130, 218),
+                        color: defaultColor,
                         fontSize: 23,
                         fontWeight: FontWeight.w300,
                         fontFamily: 'KeShiLuYanTi'),

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:suaim/addItem.dart';
 import 'haloAni.dart';
 
+import 'common/global.dart';
+
 class MainPage extends StatelessWidget {
   const MainPage({super.key}); // 定义构造方法
 
@@ -65,12 +67,12 @@ class MainPage extends StatelessWidget {
                                 builder: (context) =>
                                     const AddItem())); // 导航到添加页面
                       },
-                      child: const Text(
+                      child: Text(
                         '添加',
                         style: TextStyle(
                           fontSize: 40,
                           fontFamily: 'KeShiLuYanTi',
-                          color: Color.fromARGB(255, 22, 130, 218),
+                          color: defaultColor,
                         ),
                       ),
                     ),
@@ -86,12 +88,12 @@ class MainPage extends StatelessWidget {
                                 builder: (context) =>
                                     const AddItem())); // 导航到添加页面
                       },
-                      child: const Text(
+                      child: Text(
                         '打印',
                         style: TextStyle(
                             fontSize: 40,
                             fontFamily: 'KeShiLuYanTi',
-                            color: Color.fromARGB(255, 22, 130, 218)),
+                            color: defaultColor),
                       ),
                     ),
                   ),
@@ -106,12 +108,12 @@ class MainPage extends StatelessWidget {
                                 builder: (context) =>
                                     const AddItem())); // 导航到添加页面
                       },
-                      child: const Text(
+                      child: Text(
                         '管理',
                         style: TextStyle(
                             fontSize: 40,
                             fontFamily: 'KeShiLuYanTi',
-                            color: Color.fromARGB(255, 22, 130, 218)),
+                            color: defaultColor),
                       ),
                     ),
                   ),

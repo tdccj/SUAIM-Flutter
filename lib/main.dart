@@ -4,6 +4,8 @@ import 'home.dart';
 import 'addItem.dart';
 import 'dart:io';
 
+import 'common/global.dart';
+
 void main() {
   runApp(
     MaterialApp(

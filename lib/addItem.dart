@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:dio/dio.dart';
 import 'addItem_page.dart';
+import 'common/global.dart';
 
 void _printer() async {
   print('object');
@@ -16,7 +17,7 @@ class AddItem extends StatelessWidget {
         appBar: AppBar(
           // 改变颜色
           backgroundColor: Colors.white,
-          foregroundColor: const Color.fromARGB(255, 22, 130, 218),
+          foregroundColor: defaultColor,
           //设置阴影
           elevation: 1,
           // 在整个appbar上添加拖动控件
@@ -29,12 +30,12 @@ class AddItem extends StatelessWidget {
             ),
           ),
           // 在appbar上添加标题
-          title: const Row(
+          title: Row(
             children: [
               Text(
                 '添加',
                 style: TextStyle(
-                  color: Color.fromARGB(255, 22, 130, 218),
+                  color: defaultColor,
                   fontSize: 30,
                   fontFamily: 'KeShiLuYanTi',
                 ),
@@ -57,7 +58,7 @@ class AddItem extends StatelessWidget {
                 MinimizeWindowButton(
                   colors: WindowButtonColors(
                     normal: Colors.white,
-                    iconNormal: const Color.fromARGB(255, 22, 130, 218),
+                    iconNormal: defaultColor,
                     mouseDown: const Color.fromARGB(255, 19, 81, 132),
                     mouseOver: const Color.fromARGB(255, 107, 186, 249),
                     iconMouseDown: Colors.white54,
@@ -68,7 +69,7 @@ class AddItem extends StatelessWidget {
                 MaximizeWindowButton(
                   colors: WindowButtonColors(
                     normal: Colors.white,
-                    iconNormal: const Color.fromARGB(255, 22, 130, 218),
+                    iconNormal: defaultColor,
                     mouseDown: const Color.fromARGB(255, 19, 81, 132),
                     mouseOver: const Color.fromARGB(255, 107, 186, 249),
                     iconMouseDown: Colors.white54,
@@ -79,7 +80,7 @@ class AddItem extends StatelessWidget {
                 CloseWindowButton(
                   colors: WindowButtonColors(
                     normal: Colors.white,
-                    iconNormal: const Color.fromARGB(255, 22, 130, 218),
+                    iconNormal: defaultColor,
                     mouseDown: const Color.fromARGB(255, 19, 81, 132),
                     mouseOver: const Color.fromARGB(255, 107, 186, 249),
                     iconMouseDown: Colors.white54,
