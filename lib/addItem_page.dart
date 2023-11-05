@@ -30,19 +30,12 @@ List<Widget> _viewlist() {
       var rowNum = 0;
 
       List<Widget> rowlist = [];
-      for (var item in row) {
-        //遍历每一行的每一个元素
-        map[decoder.tables[table]!.rows[0][rowNum]] = item; //将item对应column
-        print(map);
-
-        rowlist.add(Text(row[1]));
-        rowNum++;
-      }
 
       // 生成每一行的widget
-      list.add(Row(
-        children: rowlist,
-      ));
+      list.add(ListTile(
+          title: Text(map[decoder.tables[table]!.rows[0][rowNum]] =
+              row[0]) //将item对应column
+          ));
     }
   }
   return list;
