@@ -1,7 +1,7 @@
-# SUAIM溯物——Flutter前端
+# SUAIM溯物——Flutter客户端
 
 Small-Scale Universal Asset/Inventory Management 泛用小型资产/库存管理系统<br>
-[SUAIM-Flaks后端](https://github.com/tdccj/SUAIM-Flaks)
+[SUAIM-Flaks服务端](https://github.com/tdccj/SUAIM-Flaks)
 
 ## 背景
 > 现有的大型资产/库存管理系统多为ERP/WMS系统的子模块，而小型（应用于个人/小团队）的资产/库存管理系统多为操作重复且封闭的各种小程序
@@ -36,13 +36,13 @@ Small-Scale Universal Asset/Inventory Management 泛用小型资产/库存管理
 - 调用开源ocr和识别码生成库
 
 ## 框架
-- 数据库后端
-   - 客户端后端
+- 服务端
+   - 客户端后端（待定）
    - 服务器后端（可选）
-      - python
-- 前端
+      - python——flask
+- 客户端
    - windows客户端
-      - python+flutter
+      - flutter
    - 安卓客户端
       - flutter
 

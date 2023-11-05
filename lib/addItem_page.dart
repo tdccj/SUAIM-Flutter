@@ -4,6 +4,8 @@ import 'package:path/path.dart';
 import 'dart:io';
 import 'package:spreadsheet_decoder/spreadsheet_decoder.dart';
 
+List listing = [#name, #type, #quantity, #ascription];
+
 List<Widget> _viewlist() {
   List<Widget> list = [];
   // 指定文件路径
@@ -23,7 +25,11 @@ List<Widget> _viewlist() {
     print(decoder.tables[table]!.maxRows);
     // 遍历表格中的每一行
     for (var row in decoder.tables[table]!.rows) {
-      // 打印每一行数据
+      for (var item in row) {
+        print(item); //遍历每一行的每一个元素
+      }
+
+      // 生成每一行的widget
       list.add(ListTile(
         title: Text("${row}"),
       ));
@@ -46,7 +52,7 @@ class _additempageState extends State<additempage> {
       child: Center(
         child: Row(
           children: [
-            Spacer(flex: 1),
+            const Spacer(flex: 1),
             Flexible(
               flex: 10,
               child: Column(children: [
@@ -67,6 +73,7 @@ class _additempageState extends State<additempage> {
                 child: const Text('载入'),
                 onPressed: () {
                   setState(() {
+                    // 用setState刷新_viewlist,直接调用不会加载
                     _viewlist();
                   });
                 },
