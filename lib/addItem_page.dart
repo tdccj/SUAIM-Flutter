@@ -20,10 +20,10 @@ List<Widget> _vieList() {
 
   for (var table in decoder.tables.keys) {
     // 打印表格名称、最大列数和最大行数
-    print(table);
-    print(decoder.tables[table]);
-    print(decoder.tables[table]!.maxCols);
-    print(decoder.tables[table]!.maxRows);
+    // print(table);
+    // print(decoder.tables[table]);
+    // print(decoder.tables[table]!.maxCols);
+    // print(decoder.tables[table]!.maxRows);
 
     Map map = {};
     // 遍历表格中的每一行
@@ -53,10 +53,10 @@ List<Widget> _viewListControl() {
 
   for (var table in decoder.tables.keys) {
     // 打印表格名称、最大列数和最大行数
-    print(table);
-    print(decoder.tables[table]);
-    print(decoder.tables[table]!.maxCols);
-    print(decoder.tables[table]!.maxRows);
+    // print(table);
+    // print(decoder.tables[table]);
+    // print(decoder.tables[table]!.maxCols);
+    // print(decoder.tables[table]!.maxRows);
 
     Map map = {};
     // 遍历表格中的每一行
@@ -65,8 +65,7 @@ List<Widget> _viewListControl() {
 
       // 生成每一行的widget
       list.add(ListTile(
-          title: Text(map[decoder.tables[table]!.rows[0][rowNum]] =
-              row[0]) //将item对应column
+          title: TextButton(child: Text('查看'), onPressed: () {}) //将item对应column
           ));
     }
   }
@@ -126,7 +125,8 @@ class _additempageState extends State<additempage> {
               child: Center(
                 child: TextButton(
                   style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(Size(100, 50)),
+                      minimumSize:
+                          MaterialStateProperty.all(const Size(100, 50)),
 
                       //圆角
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
