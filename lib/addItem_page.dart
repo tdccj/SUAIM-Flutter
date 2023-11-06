@@ -43,32 +43,6 @@ SpreadsheetDecoder openFlie(file) {
   return decoder;
 }
 
-List<Widget> _vieList(decoder) {
-  List<Widget> list = [];
-  // 遍历解码后的表格
-
-  for (var table in decoder.tables.keys) {
-    // 打印表格名称、最大列数和最大行数
-    // print(table);
-    // print(decoder.tables[table]);
-    // print(decoder.tables[table]!.maxCols);
-    // print(decoder.tables[table]!.maxRows);
-
-    Map map = {};
-    // 遍历表格中的每一行
-    for (var row in decoder.tables[table]!.rows) {
-      var rowNum = 0;
-
-      // 生成每一行的widget
-      list.add(ListTile(
-          title: Text(map[decoder.tables[table]!.rows[0][rowNum]] =
-              row[0]) //将item对应column
-          ));
-    }
-  }
-  return list;
-}
-
 class additempage extends StatefulWidget {
   const additempage({super.key});
 
@@ -77,7 +51,7 @@ class additempage extends StatefulWidget {
 }
 
 class _additempageState extends State<additempage> {
-  List<Widget> _viewListControl(decoder) {
+  List<Widget> _vieList(decoder) {
     List<Widget> list = [];
 
     // 遍历解码后的表格
@@ -89,27 +63,41 @@ class _additempageState extends State<additempage> {
       // print(decoder.tables[table]!.maxCols);
       // print(decoder.tables[table]!.maxRows);
 
+      Map map = {};
+
+      int rowNum = 0;
+
       // 遍历表格中的每一行
       for (var row in decoder.tables[table]!.rows) {
         // 生成每一行的widget
         list.add(ListTile(
-            title: TextButton(
-                child: const Text(
-                  '查看',
-                  style: TextStyle(color: defaultColor),
-                ),
-                onPressed: () {
-                  itemName = row[0]; //必须要有这一步，要不然全局变量会替代局部
-                  itemType = row[1];
-                  itemQuantity = row[2].toString();
-                  itemAscription = row[3];
+            title: Row(
+          children: [
+            Flexible(flex: 50, child: Text(row[0])),
+            const Spacer(
+              flex: 1,
+            ),
+            Flexible(
+                flex: 5,
+                child: TextButton(
+                    child: const Text(
+                      '查看',
+                      style: TextStyle(color: defaultColor),
+                    ),
+                    onPressed: () {
+                      itemName = row[0]; //必须要有这一步，要不然全局变量会替代局部
+                      itemType = row[1];
+                      itemQuantity = row[2].toString();
+                      itemAscription = row[3];
 
-                  setState(() {
-                    getItemInfo(
-                        itemName, itemType, itemQuantity, itemAscription);
-                  });
-                }) //将item对应column
-            ));
+                      setState(() {
+                        getItemInfo(
+                            itemName, itemType, itemQuantity, itemAscription);
+                      });
+                    }))
+          ],
+        )));
+        rowNum = rowNum + 1;
       }
     }
     return list;
@@ -130,29 +118,19 @@ class _additempageState extends State<additempage> {
               Flexible(
                   flex: 19,
                   child: Container(
-                      padding: const EdgeInsets.fromLTRB(
-                          20.0, 20.0, 20.0, 20.0), //设置边距
-                      decoration: BoxDecoration(
-                          border: Border.all(color: defaultColor), //边框颜色
-                          borderRadius: const BorderRadius.all(
-                              Radius.circular(10))), //边框圆角
-                      child: Row(
-                        children: [
-                          Flexible(
-                            flex: 1,
-                            child: ListView(
-                              children: _vieList(openFlie(file)), //name栏
-                            ),
-                          ),
-                          Flexible(
-                            flex: 1,
-                            child: ListView(
-                              children:
-                                  _viewListControl(openFlie(file)), //todo 操作栏
-                            ),
-                          )
-                        ],
-                      ))),
+                    padding: const EdgeInsets.fromLTRB(
+                        20.0, 20.0, 20.0, 20.0), //设置边距
+                    decoration: BoxDecoration(
+                        border: Border.all(color: defaultColor), //边框颜色
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10))), //边框圆角
+                    child: Flexible(
+                      flex: 1,
+                      child: ListView(
+                        children: _vieList(openFlie(file)), //name栏
+                      ),
+                    ),
+                  )),
               const Spacer(flex: 1),
             ]),
           ),
@@ -252,7 +230,6 @@ class _additempageState extends State<additempage> {
                             setState(() {
                               // 自动刷新
                               _vieList(openFlie(file));
-                              _viewListControl(openFlie(file));
                             });
                           },
                         ),
@@ -289,7 +266,6 @@ class _additempageState extends State<additempage> {
                             setState(() {
                               // 用setState刷新_viewlist,直接调用不会加载
                               _vieList(openFlie(file));
-                              _viewListControl(openFlie(file));
                             });
                           },
                         ),
