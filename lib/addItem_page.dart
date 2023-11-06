@@ -301,10 +301,20 @@ class _additempageState extends State<additempage> {
 
                             ///请求地址 获取用户列表
                             String url =
-                                "http://127.0.0.1:5000/api/get/SAIUM_TDhome_test.db/table_all";
+                                "http://127.0.0.1:5000/api/create/SAIUM_TDhome_test.db/Tracked_Vehicle_Database/item";
+
+                            // postdata
+                            Map<String, dynamic> map = Map();
+                            map['name'] = itemName;
+                            map['type'] = itemType;
+                            map['quantity'] = itemQuantity;
+                            map['ascription'] = itemAscription;
 
                             ///发起get请求
-                            Response response = await dio.get(url);
+                            Response response = await dio.post(
+                              url,
+                              data: map,
+                            );
 
                             ///响应数据
                             var data = response.data;
