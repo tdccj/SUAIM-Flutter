@@ -10,6 +10,7 @@ List listing = [#name, #type, #quantity, #ascription];
 var file = r'C:\Users\tdccj\PycharmProjects\SAIUM\打印零件表.xlsx';
 
 String fileName(name) {
+  // 调用以更新文件路径
   file = name;
   return file;
 }
@@ -145,14 +146,14 @@ class _additempageState extends State<additempage> {
                       Flexible(
                         flex: 3,
                         child: BrnPairInfoTable(
-                          itemSpacing: 50,
+                          itemSpacing: 10,
                           isValueAlign: true,
                           defaultVerticalAlignment:
                               TableCellVerticalAlignment.baseline,
                           children: [
-                            BrnInfoModal(keyPart: '文件名', valuePart: file),
+                            BrnInfoModal(keyPart: '文件名:', valuePart: file),
                             BrnInfoModal(
-                                keyPart: 'name:', valuePart: 'wadawmda')
+                                keyPart: 'name:', valuePart: 'wadawmda'),
                           ],
                         ),
                       ),
@@ -198,14 +199,19 @@ class _additempageState extends State<additempage> {
                             FilePickerResult? result =
                                 await FilePicker.platform.pickFiles();
                             if (result != null) {
-                              print(result.files.single.name);
-                              print(result.files.single.extension);
-                              print(result.files.single.size);
-                              print(result.files.single.path);
-                              fileName(result.files.single.path);
+                              // print(result.files.single.name);
+                              // print(result.files.single.extension);
+                              // print(result.files.single.size);
+                              // print(result.files.single.path);
+                              fileName(result.files.single.path); //更新文件路径
                             } else {
                               // User canceled the picker
                             }
+                            setState(() {
+                              // 自动刷新
+                              _vieList(openFlie(file));
+                              _viewListControl(openFlie(file));
+                            });
                           },
                         ),
                       ),
