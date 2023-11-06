@@ -74,7 +74,7 @@ class _additempageState extends State<additempage> {
             title: Row(
           children: [
             Flexible(flex: 50, child: Text(row[0])),
-            const Spacer(
+            Spacer(
               flex: 1,
             ),
             Flexible(
@@ -116,21 +116,19 @@ class _additempageState extends State<additempage> {
                 flex: 1,
               ),
               Flexible(
-                  flex: 19,
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(
-                        20.0, 20.0, 20.0, 20.0), //设置边距
-                    decoration: BoxDecoration(
-                        border: Border.all(color: defaultColor), //边框颜色
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10))), //边框圆角
-                    child: Flexible(
-                      flex: 1,
-                      child: ListView(
-                        children: _vieList(openFlie(file)), //name栏
-                      ),
-                    ),
-                  )),
+                flex: 19,
+                child: Container(
+                  padding:
+                      const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0), //设置边距
+                  decoration: BoxDecoration(
+                      border: Border.all(color: defaultColor), //边框颜色
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(10))), //边框圆角
+                  child: ListView(
+                    children: _vieList(openFlie(file)), //name栏
+                  ),
+                ),
+              ),
               const Spacer(flex: 1),
             ]),
           ),
