@@ -7,7 +7,7 @@ import 'package:bruno/bruno.dart';
 import 'package:file_picker/file_picker.dart';
 
 List listing = [#name, #type, #quantity, #ascription];
-var file = r'C:\Users\tdccj\PycharmProjects\SAIUM\打印零件表.xlsx';
+var file = r'打印零件表.xlsx';
 
 var itemName = '未选中';
 var itemType = '未选中';
@@ -70,33 +70,29 @@ class _additempageState extends State<additempage> {
       // 遍历表格中的每一行
       for (var row in decoder.tables[table]!.rows) {
         // 生成每一行的widget
-        list.add(ListTile(
-            title: Row(
-          children: [
-            Flexible(flex: 50, child: Text(row[0])),
-            Spacer(
-              flex: 1,
-            ),
-            Flexible(
-                flex: 5,
-                child: TextButton(
-                    child: const Text(
-                      '查看',
-                      style: TextStyle(color: defaultColor),
-                    ),
-                    onPressed: () {
-                      itemName = row[0]; //必须要有这一步，要不然全局变量会替代局部
-                      itemType = row[1];
-                      itemQuantity = row[2].toString();
-                      itemAscription = row[3];
 
-                      setState(() {
-                        getItemInfo(
-                            itemName, itemType, itemQuantity, itemAscription);
-                      });
-                    }))
-          ],
-        )));
+        list.add(
+          ListTile(
+            title: TextButton(
+              child: Row(children: [
+                Text(
+                  row[0],
+                  style: const TextStyle(color: defaultColor),
+                ),
+              ]),
+              onPressed: () {
+                itemName = row[0]; //必须要有这一步，要不然全局变量会替代局部
+                itemType = row[1];
+                itemQuantity = row[2].toString();
+                itemAscription = row[3];
+
+                setState(() {
+                  getItemInfo(itemName, itemType, itemQuantity, itemAscription);
+                });
+              },
+            ),
+          ),
+        );
         rowNum = rowNum + 1;
       }
     }
@@ -125,7 +121,7 @@ class _additempageState extends State<additempage> {
                       borderRadius:
                           const BorderRadius.all(Radius.circular(10))), //边框圆角
                   child: ListView(
-                    children: _vieList(openFlie(file)), //name栏
+                    children: _vieList(openFlie(file)), //列表
                   ),
                 ),
               ),
@@ -275,5 +271,3 @@ class _additempageState extends State<additempage> {
     );
   }
 }
-
-//列表搞成异步了啊！！！
