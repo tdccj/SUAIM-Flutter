@@ -10,10 +10,18 @@ List listing = [#name, #type, #quantity, #ascription];
 var file = r'C:\Users\tdccj\PycharmProjects\SAIUM\打印零件表.xlsx';
 
 var itemName = '未选中';
-Map getItemInfo(itemName) {
+var itemType = '未选中';
+var itemQuantity = '未选中';
+var itemAscription = '未选中';
+
+Map getItemInfo(itemName, itemType, itemQuantity, itemAscription) {
+  // 实现信息框的信息传递
   Map Iteminfo = {};
 
-  Iteminfo['name'] = itemName;
+  Iteminfo['name'] = itemName.toString();
+  Iteminfo['type'] = itemType.toString();
+  Iteminfo['quantity'] = itemQuantity.toString();
+  Iteminfo['ascription'] = itemAscription.toString();
   print(Iteminfo);
   return Iteminfo;
 }
@@ -92,8 +100,13 @@ class _additempageState extends State<additempage> {
                 ),
                 onPressed: () {
                   itemName = row[0]; //必须要有这一步，要不然全局变量会替代局部
+                  itemType = row[1];
+                  itemQuantity = row[2].toString();
+                  itemAscription = row[3];
+
                   setState(() {
-                    getItemInfo(itemName);
+                    getItemInfo(
+                        itemName, itemType, itemQuantity, itemAscription);
                   });
                 }) //将item对应column
             ));
@@ -151,16 +164,17 @@ class _additempageState extends State<additempage> {
                 ),
                 Flexible(
                   // 信息框
-                  flex: 1,
+                  flex: 5,
                   child: Row(
                     children: [
                       const Spacer(
                         flex: 1,
                       ),
                       Flexible(
-                        flex: 3,
+                        flex: 10,
                         child: BrnPairInfoTable(
                           itemSpacing: 10,
+                          rowDistance: 30,
                           isValueAlign: true,
                           defaultVerticalAlignment:
                               TableCellVerticalAlignment.baseline,
@@ -168,7 +182,20 @@ class _additempageState extends State<additempage> {
                             BrnInfoModal(keyPart: '文件名:', valuePart: file),
                             BrnInfoModal(
                                 keyPart: 'name:',
-                                valuePart: getItemInfo(itemName)["name"]),
+                                valuePart: getItemInfo(itemName, itemType,
+                                    itemQuantity, itemAscription)["name"]),
+                            BrnInfoModal(
+                                keyPart: 'type:',
+                                valuePart: getItemInfo(itemName, itemType,
+                                    itemQuantity, itemAscription)["type"]),
+                            BrnInfoModal(
+                                keyPart: 'quantity:',
+                                valuePart: getItemInfo(itemName, itemType,
+                                    itemQuantity, itemAscription)["quantity"]),
+                            BrnInfoModal(
+                                keyPart: 'ascription:',
+                                valuePart: getItemInfo(itemName, itemType,
+                                    itemQuantity, itemAscription)["ascription"])
                           ],
                         ),
                       ),
@@ -274,5 +301,3 @@ class _additempageState extends State<additempage> {
     );
   }
 }
-
-// TODO 显示没做呢
