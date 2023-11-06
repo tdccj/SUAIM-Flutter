@@ -5,6 +5,7 @@ import 'package:spreadsheet_decoder/spreadsheet_decoder.dart';
 import 'package:suaim/common/global.dart';
 import 'package:bruno/bruno.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:dio/dio.dart';
 
 List listing = [#name, #type, #quantity, #ascription];
 var file = r'打印零件表.xlsx';
@@ -263,7 +264,58 @@ class _additempageState extends State<additempage> {
                             });
                           },
                         ),
-                      )
+                      ),
+                      const Spacer(
+                        flex: 1,
+                      ),
+                      Flexible(
+                        // 刷新按钮
+                        flex: 5,
+                        child: TextButton(
+                          style: ButtonStyle(
+                              minimumSize: MaterialStateProperty.all(
+                                  const Size(100, 50)),
+
+                              //圆角
+                              shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5))),
+                              //边框
+                              side: MaterialStateProperty.all(
+                                const BorderSide(color: defaultColor),
+                              ),
+                              //背景
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.white)),
+                          child: const Text(
+                            '添加',
+                            style: TextStyle(
+                                fontFamily: "KeShiLuYanTi",
+                                color: defaultColor),
+                          ),
+                          onPressed: () async {
+                            // 调用dio库请求api
+
+                            ///创建Dio对象
+                            Dio dio = new Dio();
+
+                            ///请求地址 获取用户列表
+                            String url =
+                                "http://127.0.0.1:5000/api/get/SAIUM_TDhome_test.db/table_all";
+
+                            ///发起get请求
+                            Response response = await dio.get(url);
+
+                            ///响应数据
+                            var data = response.data;
+
+                            setState(() {
+                              var result = data.toString();
+                              print(result);
+                            });
+                          },
+                        ),
+                      ),
                     ]))
               ]))
         ],
