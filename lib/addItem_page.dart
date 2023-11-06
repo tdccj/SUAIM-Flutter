@@ -9,6 +9,15 @@ import 'package:file_picker/file_picker.dart';
 List listing = [#name, #type, #quantity, #ascription];
 var file = r'C:\Users\tdccj\PycharmProjects\SAIUM\打印零件表.xlsx';
 
+var itemName = '未选中';
+Map getItemInfo(itemName) {
+  Map Iteminfo = {};
+
+  Iteminfo['name'] = itemName;
+  print(Iteminfo);
+  return Iteminfo;
+}
+
 String fileName(name) {
   // 调用以更新文件路径
   file = name;
@@ -52,34 +61,6 @@ List<Widget> _vieList(decoder) {
   return list;
 }
 
-List<Widget> _viewListControl(decoder) {
-  List<Widget> list = [];
-
-  // 遍历解码后的表格
-
-  for (var table in decoder.tables.keys) {
-    // 打印表格名称、最大列数和最大行数
-    // print(table);
-    // print(decoder.tables[table]);
-    // print(decoder.tables[table]!.maxCols);
-    // print(decoder.tables[table]!.maxRows);
-
-    // 遍历表格中的每一行
-    for (var row in decoder.tables[table]!.rows) {
-      // 生成每一行的widget
-      list.add(ListTile(
-          title: TextButton(
-              child: const Text(
-                '查看',
-                style: TextStyle(color: defaultColor),
-              ),
-              onPressed: () {}) //将item对应column
-          ));
-    }
-  }
-  return list;
-}
-
 class additempage extends StatefulWidget {
   const additempage({super.key});
 
@@ -88,7 +69,39 @@ class additempage extends StatefulWidget {
 }
 
 class _additempageState extends State<additempage> {
-  @override
+  List<Widget> _viewListControl(decoder) {
+    List<Widget> list = [];
+
+    // 遍历解码后的表格
+
+    for (var table in decoder.tables.keys) {
+      // 打印表格名称、最大列数和最大行数
+      // print(table);
+      // print(decoder.tables[table]);
+      // print(decoder.tables[table]!.maxCols);
+      // print(decoder.tables[table]!.maxRows);
+
+      // 遍历表格中的每一行
+      for (var row in decoder.tables[table]!.rows) {
+        // 生成每一行的widget
+        list.add(ListTile(
+            title: TextButton(
+                child: const Text(
+                  '查看',
+                  style: TextStyle(color: defaultColor),
+                ),
+                onPressed: () {
+                  itemName = row[0]; //必须要有这一步，要不然全局变量会替代局部
+                  setState(() {
+                    getItemInfo(itemName);
+                  });
+                }) //将item对应column
+            ));
+      }
+    }
+    return list;
+  }
+
   Widget build(BuildContext context) {
     return Center(
       child: Row(
@@ -153,7 +166,8 @@ class _additempageState extends State<additempage> {
                           children: [
                             BrnInfoModal(keyPart: '文件名:', valuePart: file),
                             BrnInfoModal(
-                                keyPart: 'name:', valuePart: 'wadawmda'),
+                                keyPart: 'name:',
+                                valuePart: getItemInfo(itemName)["name"]),
                           ],
                         ),
                       ),
