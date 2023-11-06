@@ -9,6 +9,11 @@ import 'package:file_picker/file_picker.dart';
 List listing = [#name, #type, #quantity, #ascription];
 var file = r'C:\Users\tdccj\PycharmProjects\SAIUM\打印零件表.xlsx';
 
+String fileName(name) {
+  file = name;
+  return file;
+}
+
 SpreadsheetDecoder openFlie(file) {
 // 指定文件路径
 
@@ -145,6 +150,7 @@ class _additempageState extends State<additempage> {
                           defaultVerticalAlignment:
                               TableCellVerticalAlignment.baseline,
                           children: [
+                            BrnInfoModal(keyPart: '文件名', valuePart: file),
                             BrnInfoModal(
                                 keyPart: 'name:', valuePart: 'wadawmda')
                           ],
@@ -196,6 +202,7 @@ class _additempageState extends State<additempage> {
                               print(result.files.single.extension);
                               print(result.files.single.size);
                               print(result.files.single.path);
+                              fileName(result.files.single.path);
                             } else {
                               // User canceled the picker
                             }
